@@ -82,7 +82,7 @@ Check it's working:
 https://localhost:7243/openapi/v1.json
 ```
 
-Install Scalar:
+Install [Scalar](https://scalar.com/):
 ```
 dotnet add package Scalar.AspNetCore
 ```
