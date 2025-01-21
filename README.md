@@ -48,7 +48,7 @@ Add db connection string into [`appsettings.json`](https://github.com/PierBover/
 
 [Create database context](https://github.com/PierBover/dotnet-test-minimal-api/blob/caf6bc7262637c0571474e30dcd9261e634ebc12/Data/AppDbContext.cs)
 
-[Add db context to app builder](https://github.com/PierBover/dotnet-test-minimal-api/blob/caf6bc7262637c0571474e30dcd9261e634ebc12/Program.cs#L9-L11)
+[Add database context to app builder](https://github.com/PierBover/dotnet-test-minimal-api/blob/caf6bc7262637c0571474e30dcd9261e634ebc12/Program.cs#L9-L11)
 
 Install EF CLI globally to be able to run migrations:
 ```
@@ -60,7 +60,7 @@ Install EF Design:
 dotnet add package Microsoft.EntityFrameworkCore.Design
 ```
 
-Create and run first migration
+Create and run the first migration:
 ```
 dotnet ef migrations add Init
 dotnet ef database update
@@ -101,7 +101,7 @@ Install Identity:
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
 ```
 
-[Adapt DB context to use `IdentityDbContext`](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Data/AppDbContext.cs)
+[Adapt database context to use `IdentityDbContext`](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Data/AppDbContext.cs)
 
 [Add auth to the app builder](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L14-L15)
 
@@ -113,7 +113,7 @@ dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
 [Map auth endpoints](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L40)
 
-Create and run the auth migration
+Create and run the auth migration:
 ```
 dotnet ef migrations add Identity
 dotnet ef database update
