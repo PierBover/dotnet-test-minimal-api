@@ -1,14 +1,19 @@
 using DotnetTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(options => {
 	options.UseNpgsql(builder.Configuration.GetConnectionString("AppDatabase"));
 });
+
+builder.Services.AddOpenApi();
+
+builder.Services.AddAuthorization();
+
+builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
 
@@ -16,7 +21,10 @@ if (app.Environment.IsDevelopment()) {
 	app.MapScalarApiReference();
 }
 
+app.UseHttpsRedirection();
+app.UseAuthorization();
 app.MapOpenApi();
+app.MapIdentityApi<IdentityUser>();
 
 app.MapGet("/api/fruits", async (AppDbContext db) =>
 	await db.Fruits.ToListAsync()
