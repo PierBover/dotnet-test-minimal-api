@@ -6,13 +6,19 @@ https://dotnet.microsoft.com/en-us/download
 Create repo and init.
 
 Create .gitginore file:
-`dotnet new gitignore`
+```
+dotnet new gitignore
+```
 
 Scaffold empy app:
-`dotnet new web`
+```
+dotnet new web
+```
 
 Add HTTPS:
-`dotnet dev-certs https --trust`
+```
+dotnet dev-certs https --trust
+```
 
 Move HTTPS profile to the first position in [`Properties/launchSettings.json`](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Properties/launchSettings.json) so that `dotnet run` will use this profile by default.
 
@@ -20,7 +26,7 @@ Move HTTPS profile to the first position in [`Properties/launchSettings.json`](h
 ## Entity Framework and database
 
 Install EF for:
-```cs
+```
 // in memory
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 
@@ -43,10 +49,14 @@ Add db connection string into [`appsettings.json`](https://github.com/PierBover/
 [Add db context to app builder](https://github.com/PierBover/dotnet-test-minimal-api/blob/caf6bc7262637c0571474e30dcd9261e634ebc12/Program.cs#L9-L11)
 
 Install EF CLI globally to be able to run migrations:
-`dotnet tool install --global dotnet-ef`
+```
+dotnet tool install --global dotnet-ef
+```
 
 Install EF Design:
-`dotnet add package Microsoft.EntityFrameworkCore.Design`
+```
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
 
 Create and run first migration
 ```
@@ -57,27 +67,37 @@ dotnet ef database update
 ## OpenAPI and Scalar
 
 Install OpenAPI:
-`dotnet add package Microsoft.AspNetCore.OpenApi`
+```
+dotnet add package Microsoft.AspNetCore.OpenApi
+```
 
 [Add OpenAPI to builder](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L13)
 
 [Map OpenAPI endpoints](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L39)
 
 Check it's working:
-`https://localhost:7243/openapi/v1.json`
+```
+https://localhost:7243/openapi/v1.json
+```
 
 Install Scalar:
-`dotnet add package Scalar.AspNetCore`
+```
+dotnet add package Scalar.AspNetCore
+```
 
 [Add Scalar to the app](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L33-L35)
 
 Check it's working:
-`https://localhost:7243/scalar/v1`
+```
+https://localhost:7243/scalar/v1
+```
 
 ## Identity
 
 Install Identity:
-`dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore`
+```
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+```
 
 [Adapt DB context to use `IdentityDbContext`](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Data/AppDbContext.cs)
 
