@@ -1,5 +1,13 @@
 # Dotnet Minimal API tutorial
 
+This is a small tutorial I wrote just for reference to create a simple API using:
+* Postgres
+* Entity Framework
+* OpenAPI with the Scalar docs/client
+* ASP.NET Core Identity
+
+## First steps
+
 [Download dotnet](https://dotnet.microsoft.com/en-us/download)
 
 Create repo and init locally.
