@@ -2,6 +2,7 @@ using DotnetTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +11,12 @@ builder.Services.AddDbContext<AppDbContext>(options => {
 });
 
 builder.Services.AddOpenApi();
-
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.ConfigureApplicationCookie(options => {
+	options.Cookie.SameSite = SameSiteMode.Strict;
+});
 
 var app = builder.Build();
 
