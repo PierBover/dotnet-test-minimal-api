@@ -1,4 +1,4 @@
-# Dotnet Minimal API tutorial
+# .NET 9 Minimal API tutorial
 
 This is a small tutorial I wrote just for reference to create a simple API using:
 * Postgres
