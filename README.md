@@ -3,13 +3,16 @@
 Download dotnet
 https://dotnet.microsoft.com/en-us/download
 
-Create repo and init
+Create repo and init.
 
-Create .gitginore file with `dotnet new gitignore`
+Create .gitginore file:
+`dotnet new gitignore`
 
-Scaffold empy app with `dotnet new web`
+Scaffold empy app:
+`dotnet new web`
 
-Add HTTPS with `dotnet dev-certs https --trust`
+Add HTTPS:
+`dotnet dev-certs https --trust`
 
 Move HTTPS profile to the first position in [`Properties/launchSettings.json`](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Properties/launchSettings.json) so that `dotnet run` will use this profile by default.
 
@@ -17,7 +20,7 @@ Move HTTPS profile to the first position in [`Properties/launchSettings.json`](h
 ## Entity Framework and database
 
 Install EF for:
-```
+```cs
 // in memory
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 
@@ -39,9 +42,11 @@ Add db connection string into [`appsettings.json`](https://github.com/PierBover/
 
 [Add db context to app builder](https://github.com/PierBover/dotnet-test-minimal-api/blob/caf6bc7262637c0571474e30dcd9261e634ebc12/Program.cs#L9-L11)
 
-Install EF CLI globally to be able to run migrations with `dotnet tool install --global dotnet-ef`
+Install EF CLI globally to be able to run migrations:
+`dotnet tool install --global dotnet-ef`
 
-Install EF Design `dotnet add package Microsoft.EntityFrameworkCore.Design`
+Install EF Design:
+`dotnet add package Microsoft.EntityFrameworkCore.Design`
 
 Create and run first migration
 ```
@@ -51,23 +56,28 @@ dotnet ef database update
 
 ## OpenAPI and Scalar
 
-Install OpenAPI `dotnet add package Microsoft.AspNetCore.OpenApi`
+Install OpenAPI:
+`dotnet add package Microsoft.AspNetCore.OpenApi`
 
-Add OpenAPI to builder `builder.Services.AddOpenApi();`
+[Add OpenAPI to builder](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L13)
 
-Map OpenAPI endpoints `app.MapOpenApi();`
+[Map OpenAPI endpoints](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L39)
 
-Check it's working `https://localhost:7243/openapi/v1.json`
+Check it's working:
+`https://localhost:7243/openapi/v1.json`
 
-Install Sacalar `dotnet add package Scalar.AspNetCore`
+Install Scalar:
+`dotnet add package Scalar.AspNetCore`
 
-Add it to the app `app.MapScalarApiReference();`
+[Add Scalar to the app](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L33-L35)
 
-Check it's working `https://localhost:7243/scalar/v1`
+Check it's working:
+`https://localhost:7243/scalar/v1`
 
 ## Identity
 
-Install `dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore`
+Install Identity:
+`dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore`
 
 [Adapt DB context to use `IdentityDbContext`](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Data/AppDbContext.cs)
 
