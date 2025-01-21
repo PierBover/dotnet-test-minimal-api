@@ -123,3 +123,4 @@ dotnet ef database update
 
 [Configure an email provider](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/accconfirm?view=aspnetcore-9.0&tabs=visual-studio#configure-an-email-provider)
 
+[Move endpoints to their own file](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/route-handlers?view=aspnetcore-9.0#endpoint-defined-outside-of-programcs)
