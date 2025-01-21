@@ -20,6 +20,9 @@ Add HTTPS:
 dotnet dev-certs https --trust
 ```
 
+[Add HTTPS redirection middleware](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Program.cs#L37)
+
+
 Move HTTPS profile to the first position in [`Properties/launchSettings.json`](https://github.com/PierBover/dotnet-test-minimal-api/blob/main/Properties/launchSettings.json) so that `dotnet run` will use this profile by default.
 
 
