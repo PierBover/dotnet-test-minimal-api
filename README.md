@@ -1,16 +1,15 @@
-# Dotnet Minimal API
+# Dotnet Minimal API tutorial
 
-Download dotnet
-https://dotnet.microsoft.com/en-us/download
+[Download dotnet](https://dotnet.microsoft.com/en-us/download)
 
-Create repo and init.
+Create repo and init locally.
 
 Create .gitginore file:
 ```
 dotnet new gitignore
 ```
 
-Scaffold empy app:
+Scaffold empty app:
 ```
 dotnet new web
 ```
