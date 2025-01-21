@@ -16,6 +16,7 @@ builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStore
 
 builder.Services.ConfigureApplicationCookie(options => {
 	options.Cookie.SameSite = SameSiteMode.Strict;
+	options.Cookie.MaxAge = TimeSpan.FromDays(30);
 });
 
 var app = builder.Build();
